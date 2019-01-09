@@ -1,0 +1,32 @@
+<%= form_with(model: hello_world, local: true) do |form| %>
+  <% if hello_world.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hello_world.errors.count, "error") %> prohibited this hello_world from being saved:</h2>
+
+      <ul>
+      <% hello_world.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hello %>
+    <%= form.text_field :hello %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

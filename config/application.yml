@@ -1,0 +1,23 @@
+# config/application.yml
+defaults: &defaults
+  country:
+    JP: 日本
+    US: アメリカ合衆国
+    CN: 中国
+    DE: ドイツ
+    TR: トルコ
+    FR: フランス
+    BE: ベルギー
+    RU: ロシア
+    IT: イタリア
+    IN: インド
+    KR: 韓国
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
