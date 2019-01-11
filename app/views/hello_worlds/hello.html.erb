@@ -1,0 +1,16 @@
+<div class="center">
+  <% @hello_worlds.each do |hw|  %>
+    <div class="animated fadeInUp <%= 'delay-%ss' % hw.priority unless hw.priority == 1 %>">
+      <%= content_tag :h3, c(hw) %>
+      <%= content_tag :p, hw.hello %>
+    </div>
+  <% end  %>
+</div>
+
+<script>
+  $(function() {
+    setTimeout(function(){
+      scroll.Down(23000);
+    }, 500);
+  });
+</script>

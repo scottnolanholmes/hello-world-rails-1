@@ -12,6 +12,17 @@ defaults: &defaults
     IT: イタリア
     IN: インド
     KR: 韓国
+    ES: スペイン
+    PT: ポルトガル
+    NL: オランダ
+    CZ: チェコ
+    IE: アイルランド
+    GR: ギリシア
+    IQ: アラビア
+    KE: ケニア
+    VN: ベトナム
+    TH: タイ
+    MY: マレーシア
 
 development:
   <<: *defaults

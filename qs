@@ -169,16 +169,12 @@ bundle_exec() {
     run_app bundle exec $*
 }
 
-yarn_cmd() {
-    run_app bin/yarn $*
-}
-
 rubocop_cmd() {
     bundle_exec rubocop $*
 }
 
 rails_console() {
-    bundle_exec rails s $*
+    bundle_exec rails c $*
 }
 
 rake_reset_db() {
@@ -216,8 +212,12 @@ db_dump() {
     echo "done"
 }
 
-npm_install() {
-  run_front npm install
+run_yarn() {
+    run_front bin/yarn $*
+}
+
+run_npm() {
+  run_front npm $*
 }
 
 run_webpack() {
@@ -281,9 +281,6 @@ case "$cmd" in
     bundle)
         bundle_cmd $*
         ;;
-    yarn)
-        yarn_cmd $*
-        ;;
     rubocop)
         rubocop_cmd $*
         ;;
@@ -296,8 +293,11 @@ case "$cmd" in
     db-dump)
         db_dump $*
         ;;
-    npm-install)
-        npm_install $*
+    yarn)
+        run_yarn $*
+        ;;
+    npm)
+        run_npm $*
         ;;
     webpack)
         run_webpack $*
@@ -318,24 +318,24 @@ Service:
   bash     [service] invoke bash
   run      [service] [command] run command in given container
 
-Rails:
+App:
   server   Run rails server
   rails    [args] Run rails command in application container
   rake     [args] Run rake command in application container
   rspec    [args] Run rspec command in application container
   bundle   [args] Run bundle command in application container
   cons     Run rails console
-  yarn     [args] Run yarn command in application container
   rubocop  [args] Run rubocop
 
 Frontend
-  npm-install run npm install
-  webpack     run webpack
+  yarn      Run yarn command in Frontend container
+  npm       Run npm  command in Frontend container
+  webpack   Run webpack  command in Frontend container
 
 DB:
-  reset-db                reset database
-  psql                    launch psql console
-  pg-dump                 dump database data as sql file
+  reset-db  reset database in DB container
+  psql      launch psql console in DB container
+  pg-dump   dump database data as sql file in DB container
 EOF
         echo "$help"
         exit 2
