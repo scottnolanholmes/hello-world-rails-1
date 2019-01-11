@@ -23,6 +23,12 @@ echoing() {
     echo "========================================================"
 }
 
+rm_pids() {
+  if [ -f "tmp/pids/server.pid" ]; then
+      rm -f tmp/pids/server.pid
+  fi
+}
+
 create_project() {
   echoing "Exec Bundle Install for executing rails new command"
   bundle_cmd install
@@ -57,6 +63,7 @@ init_services() {
 
 compose_up() {
     echoing "Create and start containers $*"
+    rm_pids
     $dc up -d "$1"
 }
 
@@ -72,6 +79,7 @@ compose_build() {
 
 compose_start() {
     echoing "Start services $*"
+    rm_pids
     $dc start $*
 }
 
@@ -131,7 +139,7 @@ run_front() {
 
 rails_server() {
     compose_stop $app
-    rm tmp/pids/server.pid
+    rm_pids
 
     renv=""
     if [ -n "$RAILS_ENV" ]; then
