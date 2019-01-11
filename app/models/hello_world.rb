@@ -1,7 +1,5 @@
 class HelloWorld < ApplicationRecord
-  COUNTRY = Settings.country
-
-  validates country,  presense: true, inclusion: { in: COUNTRY.keys }, uniqueness: true
-  validates hello,    presense: true
-  validates priority, priority: true
+  validates :country,  presence: true, inclusion: { in: SETTING[:country].keys }, uniqueness: true
+  validates :hello,    presence: true
+  validates :priority, presence: true, numericality: { only_integer: true }, length: { maximum: 196 }
 end
