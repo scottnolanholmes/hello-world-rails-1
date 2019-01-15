@@ -2,7 +2,7 @@ class HelloWorldsController < ApplicationController
   before_action :set_hello_world, only: [:show, :edit, :update, :destroy]
 
   def hello
-    @hello_worlds = HelloWorld.all.order(:priority).limit(15)
+    @hello_worlds = HelloWorld.all.order(:priority).limit(14)
   end
 
   # GET /hello_worlds
