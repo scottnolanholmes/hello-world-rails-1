@@ -6,6 +6,10 @@
   <%= link_to 'New Hello World', new_hello_world_path, class: "add" %>
 </div>
 
+<div class="block">
+  <%= paginate @hello_worlds %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -33,3 +37,7 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="block">
+  <%= paginate @hello_worlds %>
+</div>

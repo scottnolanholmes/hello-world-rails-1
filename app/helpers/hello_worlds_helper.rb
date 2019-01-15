@@ -4,6 +4,6 @@ module HelloWorldsHelper
   end
 
   def i(key)
-    image_tag "../img/#{key}.ico"
+    image_tag(asset_pack_path("img/#{key}.ico"))
   end
 end

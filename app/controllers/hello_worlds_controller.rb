@@ -8,7 +8,7 @@ class HelloWorldsController < ApplicationController
   # GET /hello_worlds
   # GET /hello_worlds.json
   def index
-    @hello_worlds = HelloWorld.all
+    @hello_worlds = HelloWorld.page(params[:page])
   end
 
   # GET /hello_worlds/1
