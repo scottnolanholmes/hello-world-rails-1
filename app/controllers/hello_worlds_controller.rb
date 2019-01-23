@@ -1,20 +1,15 @@
 class HelloWorldsController < ApplicationController
   before_action :set_hello_world, only: [:show, :edit, :update, :destroy]
 
-  def hello
-    @hello_worlds = HelloWorld.all.order(:priority).limit(14)
-  end
-
   # GET /hello_worlds
   # GET /hello_worlds.json
   def index
-    @hello_worlds = HelloWorld.page(params[:page])
+    @hello_worlds = HelloWorld.page(params[:page]).order(:priority)
   end
 
   # GET /hello_worlds/1
   # GET /hello_worlds/1.json
-  def show
-  end
+  def show; end
 
   # GET /hello_worlds/new
   def new
@@ -22,8 +17,7 @@ class HelloWorldsController < ApplicationController
   end
 
   # GET /hello_worlds/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /hello_worlds
   # POST /hello_worlds.json
@@ -32,7 +26,7 @@ class HelloWorldsController < ApplicationController
 
     respond_to do |format|
       if @hello_world.save
-        format.html { redirect_to @hello_world, notice: 'Hello world was successfully created.' }
+        format.html { redirect_to @hello_world, notice: "Hello world was successfully created." }
         format.json { render :show, status: :created, location: @hello_world }
       else
         format.html { render :new }
@@ -46,7 +40,7 @@ class HelloWorldsController < ApplicationController
   def update
     respond_to do |format|
       if @hello_world.update(hello_world_params)
-        format.html { redirect_to @hello_world, notice: 'Hello world was successfully updated.' }
+        format.html { redirect_to @hello_world, notice: "Hello world was successfully updated." }
         format.json { render :show, status: :ok, location: @hello_world }
       else
         format.html { render :edit }
@@ -60,12 +54,13 @@ class HelloWorldsController < ApplicationController
   def destroy
     @hello_world.destroy
     respond_to do |format|
-      format.html { redirect_to hello_worlds_url, notice: 'Hello world was successfully destroyed.' }
+      format.html { redirect_to hello_worlds_url, notice: "Hello world was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hello_world
       @hello_world = HelloWorld.find(params[:id])
@@ -73,6 +68,6 @@ class HelloWorldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hello_world_params
-      params.require(:hello_world).permit(:country, :hello, :priority)
+      params.require(:hello_world).permit(:country, :hello, :priority, :image)
     end
 end

@@ -1,32 +1,80 @@
-<%= form_with(model: hello_world, local: true) do |form| %>
-  <% if hello_world.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hello_world.errors.count, "error") %> prohibited this hello_world from being saved:</h2>
-
-      <ul>
-      <% hello_world.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+  <%= form_with(model: hello_world, local: true) do |form| %>
+    <% if hello_world.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger text-center mt-4">
+        <h3><%= pluralize(hello_world.errors.count, "errors") %> occured</h3>
+        <% hello_world.errors.full_messages.each do |message| %>
+          <h5><%= message %></h5>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <!--/col-->
+          <div class="col-md-8 offset-md-2">
+              <!-- form user info -->
+              <div class="card card-outline-secondary">
+                  <div class="card-header">
+                      <h3 class="mb-0">Edit Helloworld</h3>
+                  </div>
+                  <div class="card-body">
+                      <form class="form" role="form">
+                          <div class="form-group row">
+                              <%= form.label :country, class: "col-lg-3 col-form-label form-control-label" %>
+                              <div class="col-lg-6">
+                                <%= form.collection_select :country, SETTING[:country], :first, :last, { selected: @hello_world.country }, { class: 'form-control'} %>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <%= form.label :hello, class: "col-lg-3 col-form-label form-control-label" %>
+                              <div class="col-lg-8">
+                                  <%= form.text_field :hello, class: "form-control" %>
+                                  <div class="field-with-errors"></div>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <%= form.label :priority, class: "col-lg-3 col-form-label form-control-label" %>
+                              <div class="col-lg-2">
+                                  <%= form.number_field :priority, class: "form-control" %>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <%= form.label :image, class: "col-lg-3 col-form-label form-control-label" %>
+                            <div class="col-lg-8">
+                              <div class="custom-file">
+                                <%= form.file_field :image, class: "custom-file-input", id: "customFile" %>
+                                <label class="form-control custom-file-label" for="customFile" id="customFileLabel">
+                                  <%= hello_world.image.present? ? hello_world.image.file.filename : "ファイルを選択してください" %>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-3 col-form-label form-control-label"></label>
+                              <div class="col-lg-9">
+                                  <%= link_to "Back", hello_worlds_path, class: "btn btn-secondary" %>
+                                  <%= form.submit "Submit", class: "btn btn-primary" %>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <!-- /form user info -->
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
   </div>
-
-  <div class="field">
-    <%= form.label :hello %>
-    <%= form.text_field :hello %>
-  </div>
-
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.number_field :priority %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <!--/col-->
 <% end %>
+
+<script>
+  $('#customFile').on('change',function(){
+    $(this).next('#customFileLabel').html($(this)[0].files[0].name);
+  })
+</script>

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_01_09_095441) do
     t.string "country"
     t.string "hello"
     t.integer "priority"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country"], name: "index_hello_worlds_on_country", unique: true

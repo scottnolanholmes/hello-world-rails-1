@@ -22,11 +22,13 @@
 
 /public/assets
 .byebug_history
+.bash_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /public/entry
 /public/entry-test
+/public/uploads
 /node_modules
 yarn-debug.log*
 .yarn-integrity

@@ -1,72 +1,33 @@
 body {
-  background: linear-gradient(-135deg, #E4A972, #9941D8);
-  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding-top: 54px;
+}
+
+h1, h2, h3 {
+  letter-spacing: .1em;
+  text-shadow: 0 2px 0 rgba(black, .1);
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
 }
 
 .none {
   display: none;
 }
 
-.hello {
-  h3 {
-    color: white;
-    font-size: 35px;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: .1em;
-    text-shadow: 0 2px 0 rgba(black, .1);
-  }
-
-  p {
-    color: white;
-    font-size: 25px;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: .1em;
-    text-shadow: 0 2px 0 rgba(black, .1);
-  }
-}
-
-h1 {
-  color: white;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: .1em;
-  text-shadow: 0 2px 0 rgba(black, .1);
-}
-
-a {
-  &.primary {
-    padding: 0.3em 0.5em;
-    text-decoration: none;
-    color: #FFA000;
-    font-size: 25px;
-    border: double 4px #FFA000;
-    border-radius: 3px;
-    transition: .4s;
-
-    &:hover {
-      background: #ffc25c;
-      color: #FFF;
-    }
-  }
-
-  &.add {
-    padding: 0.3em 0.5em;
-    text-decoration: none;
-    color: #005ab3;
-    font-size: 15px;
-    border: double 4px #005ab3;
-    border-radius: 3px;
-    transition: .4s;
-
-    &:hover {
-      background: #005ab3;
-      color: #FFF;
-    }
-  }
-}
-
-.block {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.no-underline:hover {
+  text-decoration: none;
 }
 
 table{
@@ -91,15 +52,22 @@ td,th{
   padding:10px;
 }
 
-.pagination {
-  a {
-    color: white;
-    padding-left: 7px;
-    text-decoration: none;
-    transition: background-color .3s;
+.custom-file-input:lang(ja) ~ .custom-file-label::after {
+  content: "参照";
+}
 
-    &:hover {
-      color: #005ab3;
-    }
-  }
+.custom-file {
+  overflow: hidden;
+}
+.custom-file-label {
+  white-space: nowrap;
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.field-with-errors input {
+  border: 1px solid red;
 }

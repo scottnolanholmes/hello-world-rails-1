@@ -4,6 +4,7 @@ class CreateHelloWorlds < ActiveRecord::Migration[5.2]
       t.string :country
       t.string :hello
       t.integer :priority
+      t.string :image
 
       t.timestamps
     end
