@@ -53,10 +53,9 @@ init_services() {
     compose_up --build
 
     bundle_cmd install
-    rake_reset_db
-    npm_install
-    yarn_cmd
-    rake_cmd "frontend:import"
+    run_yarn install
+    rails_cmd db:migrate:reset
+    rails_cmd db:seed
 
     compose_ps
 }

@@ -3,14 +3,15 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "bootstrap": "^4.2.1",
+    "chart.js": "^2.7.3",
     "jquery": "^3.3.1",
     "jquery-ujs": "^1.2.2",
-    "bootstrap": "^4.2.1",
     "popper.js": "^1.14.6",
-    "sweetalert2": "^7.29.1",
-    "chart.js": "^2.7.3"
+    "sweetalert2": "^7.29.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.14"
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "2.11.2"
   }
 }
