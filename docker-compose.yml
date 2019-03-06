@@ -15,14 +15,11 @@ services:
     environment:
       HOME: /app
       RAILS_ENV: development
-      WEBPACKER_DEV_SERVER_HOST: webpack
-      WEBPACKER_DEV_SERVER_PUBLIC: webpack:3035
     ports:
       - "3000:3000"
     tty: true
     links:
       - db
-      - webpack
   webpack:
     build: .
     command: bash -c "rm -rf ./public/entry; ./bin/webpack-dev-server"
