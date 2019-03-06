@@ -32,7 +32,9 @@
                         <div class="form-group row">
                           <%= content_tag :label, "Image", class: "col-lg-3 col-form-label form-control-label" %>
                           <div class="col-lg-5">
+                            <% if @hello_world.image.present? %>
                             <%= image_tag(@hello_world.image.url, class: "card-img-top") %>
+                            <% end %>
                           </div>
                         </div>
                         <div class="form-group row">
