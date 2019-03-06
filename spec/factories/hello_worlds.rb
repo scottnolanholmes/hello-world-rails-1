@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :hello_world do
-    country "JP"
+    country { "JP" }
     sequence(:hello) {|i| "Test Hello #{i}" }
     sequence(:priority) {|i| i }
 
