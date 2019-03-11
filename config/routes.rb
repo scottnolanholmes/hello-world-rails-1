@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   # static page
   scope module: :statics do
-    %i[about sample_form].each {|action| get action }
+    %i[about sample_form ghibli].each {|action| get action }
   end
 end

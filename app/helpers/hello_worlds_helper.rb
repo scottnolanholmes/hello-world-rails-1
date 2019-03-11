@@ -1,4 +1,8 @@
 module HelloWorldsHelper
+  def top_animation
+    "animated fadeInDown" if params[:page].blank?
+  end
+
   def c(obj)
     SETTING[:country][obj.country]
   end
