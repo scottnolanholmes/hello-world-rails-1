@@ -1,6 +1,9 @@
 # Hello World Rails
-You can easily create Rails Web Application with docker-compose.
-It uses PostGresql for the database and webpacker on the front end, so modern development using ES 6 is possible.
+You can easily create Rails web application with docker-compose.
+
+The functions often used in web applications are implemented in advance.
+
+It can be used for project and learning.
 
 ## Including
 There are includeing such tool and function, liblary.
