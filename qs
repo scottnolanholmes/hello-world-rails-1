@@ -66,7 +66,6 @@ init_services() {
 
     rm_pids
 
-    $dc create
     rails_server
 }
 
