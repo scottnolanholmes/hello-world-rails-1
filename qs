@@ -66,7 +66,8 @@ init_services() {
 
     rm_pids
 
-    $dc up
+    $dc create
+    rails_server
 }
 
 compose_up() {
