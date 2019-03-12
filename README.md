@@ -1,24 +1,43 @@
-# README
+# Hello World Rails
+You can easily create Rails Web Application with docker-compose.
+It uses PostGresql for the database and webpacker on the front end, so modern development using ES 6 is possible.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Including
+There are includeing such tool and function, liblary.
 
-Things you may want to cover:
+- [Rspec](http://rspec.info/)
+- [Bootstrap4](https://getbootstrap.com/)
+- [Webpacker](https://github.com/rails/webpacker)
+- [PostgerSQL](https://www.postgresql.org/)
+- [JQuery](https://jquery.com/)
+- [Animate.css](https://daneden.github.io/animate.css/)
+- [sweetalert2](https://sweetalert2.github.io/)
+- [chart.js](https://www.chartjs.org/)
+- Api Accessor
+- CSV exporter
 
-* Ruby version
+## Install Docker
+Please install Docker on your PC first.
+Refer to [here](https://docs.docker.com/install/) for the installation procedure.
 
-* System dependencies
+If you are a Linux user you need to install docker-compose with [this operations](https://docs.docker.com/compose/install/#install-compose).
 
-* Configuration
+## Clone this repository
+Then clone the repository and move to project folder.
+Plese set your project name like `sample_app`.
 
-* Database creation
+```
+git clone git@github.com:belion-freee/hello-world-rails.git <Project name>
+cd <Project name>
+```
 
-* Database initialization
+## Execute Setup
+Only you need to execute initializing script.
 
-* How to run the test suite
+```
+./qs init
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Hello World!!
+Finally, please access `http://localhost:3000` as Rails is running.
+Enjoy your Rails!
