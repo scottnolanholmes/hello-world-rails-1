@@ -1,0 +1,9 @@
+ja:
+  hello: "Hello world"
+  views:
+    pagination:
+      first:    '<<'
+      last:     '>>'
+      previous: '<'
+      next:     '>'
+      truncate: "..."

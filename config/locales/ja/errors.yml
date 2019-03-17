@@ -1,0 +1,28 @@
+ja:
+  errors:
+    format: "%{message}"
+    messages:
+      blank:                    "%{attribute}を入力してください。"
+      present:                  "%{attribute}入力しないでください。"
+      empty:                    "%{attribute}を入力してください。"
+      alphanumeric:             "%{attribute}は半角英数字のみです。"
+      inclusion:                "%{attribute}は一覧にありません。"
+      invalid:                  "%{attribute}が正しくありません。"
+      required:                 "%{attribute}は必須項目です。"
+      all_required:             "%{attribute}は全て入力してください。"
+      taken:                    "%{attribute}はすでに存在します。"
+      not_a_number:             "%{attribute}は数値で入力してください。"
+      equal_to:                 "%{attribute}は%{count}と同じにしてください。"
+      greater_than:             "%{attribute}は%{count}より大きい値にしてください。"
+      greater_than_or_equal_to: "%{attribute}は%{count}以上の値にしてください。"
+      less_than:                "%{attribute}は%{count}より小さい値にしてください。"
+      less_than_or_equal_to:    "%{attribute}は%{count}以下の値にしてください。"
+      too_long:                 "%{attribute}は%{count}文字以内で入力してください。"
+      too_short:                "%{attribute}は%{count}文字以上で入力してください。"
+      wrong_length:             "%{attribute}は%{count}文字で入力してください。"
+      password_complexity:      "%{attribute}は小文字の英字、数字をそれぞれ1文字以上入力してください。"
+      deplicated:               "この%{attribute}は既に使われています。別の%{attribute}を入力してください。"
+      unexpected_error:         "予期せぬエラーが発生しました。"
+    template:
+      body: 入力内容に誤りがあります。次の項目をご確認ください。
+      header: "%{count}個のエラーが発生しました"

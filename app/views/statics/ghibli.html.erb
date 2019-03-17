@@ -1,3 +1,6 @@
+<!-- i18n -->
+<% tt = t("api.ghibli.distribution.films")  %>
+
 <!-- Page Heading -->
 <div class="text-center animated fadeInDown">
   <h1 class="my-4">Ghibli Films<br>
@@ -15,8 +18,8 @@
         <%= link_to google_url("ghibli " + film["title"]), target: "_blank" do %>
           <h4 class="card-title"><%= film["title"] %></h4>
         <% end  %>
-        <p class="card-text">Director : <%= film["director"] %></p>
-        <p class="card-text">Release Date : <%= film["release_date"] %></p>
+        <p class="card-text"><%= tt[:director] %> : <%= film["director"] %></p>
+        <p class="card-text"><%= tt[:release_date] %> : <%= film["release_date"] %></p>
       </div>
     </div>
   </div>
