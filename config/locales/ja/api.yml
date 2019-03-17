@@ -1,0 +1,11 @@
+ja:
+  api:
+    ghibli:
+      base: "ジブリ"
+      films: "映画"
+      distribution:
+        films:
+          rt_score:     スコア
+          title:        タイトル
+          director:     監督
+          release_date: 公開日

@@ -8,7 +8,7 @@ class StaticsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv {
-        send_data(File::Csv.export(:ghibli, @films), filename: "ghibli_films.csv", type: :csv)
+        send_data(File::Csv.export(:ghibli, @films, yml: "api.ghibli.distribution.films"), filename: "ghibli_films.csv", type: :csv)
       }
     end
   end

@@ -7,10 +7,11 @@ module File::Csv
   }.freeze
 
   class << self
-    def export(key, data)
+    def export(key, data, yml: false)
       headers = HEADER_DIFINITIONS[key]
+      ht = (yml ? I18n.t(yml).try(:values) : I18n.t("activerecord.attributes.#{key}").try(:values)) || headers
       CSV.generate do |csv|
-        csv << headers
+        csv << ht
         data.each{|res|
           res = res.with_indifferent_access if res.is_a?(Hash)
           csv << headers.map {|k| res[k] }

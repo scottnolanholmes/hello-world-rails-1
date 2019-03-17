@@ -1,0 +1,8 @@
+<% if model.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger text-center mt-4">
+    <h5><%= t("errors.template.header", count: model.errors.count) %></h5>
+    <% model.errors.full_messages.each do |message| %>
+      <p><strong><%= message %></strong></p>
+    <% end %>
+  </div>
+<% end %>
