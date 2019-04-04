@@ -22,7 +22,7 @@ services:
       - db
   webpack:
     build: .
-    command: bash -c "rm -rf ./public/entry; ./bin/webpack-dev-server"
+    command: ./bin/webpack-dev-server
     environment:
       HOME: /app
       NODE_ENV: development
