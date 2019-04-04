@@ -5,6 +5,8 @@ The functions often used in web applications are implemented in advance.
 
 It can be used for project and learning.
 
+Please refer to [Wiki](https://github.com/belion-freee/hello-world-rails/wiki/Development-Wiki) for details of the library. But This is written in Japanese...Sorry.
+
 ## Including
 There are includeing such tool and function, liblary.
 
