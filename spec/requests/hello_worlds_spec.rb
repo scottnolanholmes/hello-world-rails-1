@@ -30,7 +30,7 @@ RSpec.describe "HelloWorlds", type: :request do
       follow_redirect!
 
       expect(response).to render_template(:show)
-      expect(response.body).to match(/successfully created/im)
+      expect(response.body).not_to match(/error_explanation/im)
     end
 
     it "failed" do
@@ -38,7 +38,7 @@ RSpec.describe "HelloWorlds", type: :request do
       post "/hello_worlds", params: { hello_world: { country: "", hello: "" } }
 
       expect(response).to render_template(:new)
-      expect(response.body).to match(/errors occured/im)
+      expect(response.body).to match(/error_explanation/im)
     end
   end
 
@@ -55,7 +55,7 @@ RSpec.describe "HelloWorlds", type: :request do
       follow_redirect!
 
       expect(response).to render_template(:show)
-      expect(response.body).to match(/successfully updated/im)
+      expect(response.body).not_to match(/error_explanation/im)
     end
   end
 
