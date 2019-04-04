@@ -23,6 +23,11 @@ defaults: &defaults
     VN: ベトナム
     TH: タイ
     MY: マレーシア
+  api:
+    ghibli:
+      protocol: https
+      domain:   ghibliapi.herokuapp.com
+      films:    films
 
 development:
   <<: *defaults
