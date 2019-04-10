@@ -9,6 +9,11 @@
   <h2><%= export_csv(ghibli_path) %></h2>
 </div>
 
+<!-- chart -->
+<div class="row my-4"">
+<%= content_tag(:canvas, "", graph_data(@films, id: "ghibliGraph")) %>
+</div>
+
 <div class="row animated bounceInLeft delay-1s">
   <% @films.each do |film| %>
   <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
@@ -26,3 +31,7 @@
   <% end %>
   </div>
 </div>
+
+<script>
+  graph.Line("ghibliGraph")
+</script>
