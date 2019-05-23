@@ -46,6 +46,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
+    babaloa (0.1.4)
     bindex (0.6.0)
     bootsnap (1.4.2)
       msgpack (~> 1.0)
@@ -219,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babaloa (~> 0.1)
   bootsnap (>= 1.1.0)
   byebug
   carrierwave
