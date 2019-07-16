@@ -10,7 +10,7 @@ services:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/app
+      - .:/app:cached
       - bundle:/usr/local/bundle
     environment:
       HOME: /app
@@ -23,6 +23,7 @@ services:
   spring:
     <<: *app
     command: bundle exec spring server
+    ports: []
   webpack:
     build: .
     command: ./bin/webpack-dev-server
