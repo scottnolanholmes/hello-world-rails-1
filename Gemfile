@@ -31,6 +31,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "webmock"
+  gem "spring"
 end
 
 group :development do
