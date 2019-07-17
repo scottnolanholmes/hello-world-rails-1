@@ -9,7 +9,7 @@ class HelloWorldsController < ApplicationController
         @hello_worlds = HelloWorld.page(params[:page]).order(:priority)
       }
       format.csv {
-        send_data(File::Csv.export(:hello_world, HelloWorld.all.order(:priority)), filename: "hello_worlds.csv", type: :csv)
+        send_data(Babaloa.to_csv(HelloWorld.all.map(&:attributes), name: :hello_world), filename: "hello_worlds.csv", type: :csv)
       }
     end
   end
